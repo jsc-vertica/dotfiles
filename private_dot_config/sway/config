@@ -150,7 +150,7 @@ output * bg ~/Pictures/cheng-feng-qdlLUboRwxs-unsplash.jpg fill
     bindsym $mod+e layout toggle split
 
     # Make the current focus fullscreen
-    bindsym Mod1+m fullscreen
+    #bindsym Mod4+m fullscreen
 
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+space floating toggle
@@ -218,8 +218,8 @@ bar {
 include /etc/sway/config.d/*
 
 # Window appearance
-default_border none
-default_floating_border none
+default_border pixel 2
+default_floating_border pixel 2
 
 # Window gaps
 gaps inner 10
