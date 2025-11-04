@@ -182,14 +182,16 @@ default_floating_border pixel 2
 gaps inner 10
 gaps outer 5
 
+### STARTUP APPLICATIONS AND WINDOW RULES ###
 # move windows to workspaces when they appear
 # use 'swaymsg -t get_tree' to find app_id and class values
 
-for_window [app_id="Alacritty"] move to workspace number 1
-for_window [class="jetbrains-rider"] move to workspace number 2
-for_window [app_id="firefox_firefox"] move to workspace number 3
-
-# autostart apps
-exec $term
-exec rider
+workspace 3
 exec firefox
+
+workspace 2
+exec rider
+assign [class="jetbrains-rider"] 2
+
+workspace 1
+exec $term
