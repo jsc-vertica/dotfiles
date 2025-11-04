@@ -3,9 +3,9 @@
     "position": "top",
     "height": 30,
     "spacing": 4,
-    "margin-top": 5,
-    "margin-left": 10,
-    "margin-right": 10,
+    "margin-top": 0,
+    "margin-left": 0,
+    "margin-right": 0,
     
     "modules-left": ["sway/workspaces", "sway/window"],
     "modules-center": ["clock"],
@@ -57,7 +57,8 @@
         "timezone": "Europe/Berlin",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "{:%H:%M:%S  %d/%m/%Y}",
-        "format-alt": "{:%A, %d %B %Y}"
+        "format-alt": "{:%A, %d %B %Y}",
+        "interval": 1
     },
 
     "cpu": {
