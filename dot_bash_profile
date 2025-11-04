@@ -1,0 +1,17 @@
+#!/bin/bash
+# ~/.bash_profile - Executed for login shells
+
+# Source ~/.profile if it exists
+if [ -f ~/.profile ]; then
+    . ~/.profile
+fi
+
+# Source ~/.bashrc if it exists and we're running bash
+if [ -n "$BASH_VERSION" ] && [ -f ~/.bashrc ]; then
+    . ~/.bashrc
+fi
+
+# User specific environment and startup programs
+# Add any login-specific configurations here
+
+# Add .NET Core SDK tools

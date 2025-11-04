@@ -1,0 +1,52 @@
+# ~/.inputrc - Readline configuration
+
+# Be 8 bit clean
+set input-meta on
+set output-meta on
+set convert-meta off
+
+# Case insensitive completion
+set completion-ignore-case on
+
+# Show all completions at once
+set show-all-if-ambiguous on
+
+# Show file type indicators
+set visible-stats on
+
+# Append slash to directory names
+set mark-directories on
+set mark-symlinked-directories on
+
+# Color completion
+set colored-stats on
+set colored-completion-prefix on
+
+# History search with arrow keys
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
+# Ctrl+left/right to move by word
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
+
+# Home and End keys
+"\e[H": beginning-of-line
+"\e[F": end-of-line
+
+# Delete key
+"\e[3~": delete-char
+
+# Page up/down for history
+"\e[5~": history-search-backward
+"\e[6~": history-search-forward
+
+# Alt+Backspace to delete word
+#"\e\C-h": backward-kill-word DOES NOT WORK
+
+# Ctrl+w to delete word
+"\C-w": backward-kill-word
+
+# Tab completion cycling
+TAB: menu-complete
+"\e[Z": menu-complete-backward
