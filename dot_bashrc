@@ -247,7 +247,7 @@ if [ -f ~/.bashrc.work ]; then
     . ~/.bashrc.work
 fi
 
-# Welcome message (fixed)
+# Welcome message
 if [[ -t 1 ]]; then
     echo -e "${ECHO_BLUE}Today is $(date '+%A, %B %d, %Y')${ECHO_RESET}"
     
