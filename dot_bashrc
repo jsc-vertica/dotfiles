@@ -227,15 +227,6 @@ weather() {
     curl -s "wttr.in/${location}?format=3"
 }
 
-trim() {
-    local var="$*"
-    # Remove leading whitespace
-    var="${var#"${var%%[![:space:]]*}"}"
-    # Remove trailing whitespace
-    var="${var%"${var##*[![:space:]]}"}"
-    printf '%s' "$var"
-}
-
 # =============================================================================
 # COMPLETION
 # =============================================================================
