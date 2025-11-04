@@ -21,9 +21,9 @@ output * {
 ### IDLE CONFIGURATION ###
 
 exec swayidle -w \
-timeout 600 'swaylock -f -c 000000' \
+timeout 600 'swaylock -f -s fill -i ~/Pictures/cheng-feng-qdlLUboRwxs-unsplash.jpg --font "JetBrains Mono" --font-size 14' \
 timeout 900 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-before-sleep 'swaylock -f -c 000000'
+before-sleep 'swaylock -f -s fill -i ~/Pictures/cheng-feng-qdlLUboRwxs-unsplash.jpg --font "JetBrains Mono" --font-size 14'
 
 ### INPUT CONFIGURATION ###
 # man 5 sway-input
@@ -35,12 +35,12 @@ input "type:keyboard" {
 
 ### KEY BINDINGS ###
 
-bindsym $mod+Return exec $term      # open terminal
-bindsym $mod+w kill                 # kill focused window
-bindsym $mod+space exec $menu       # open application launcher
-bindsym $mod+l exec swaylock        # lock the screen
-floating_modifier $mod normal       # drag windows by holding down $mod and left mouse button. resize them with right mouse button + $mod.
-bindsym $mod+Shift+c reload         # reload the sway configuration file
+bindsym $mod+Return exec $term # open terminal
+bindsym $mod+w kill # kill focused window
+bindsym $mod+space exec $menu # open application launcher
+bindsym $mod+l exec swaylock -f -s fill -i ~/Pictures/cheng-feng-qdlLUboRwxs-unsplash.jpg --font 'JetBrains Mono' --font-size 14 # lock the screen
+floating_modifier $mod normal # drag windows by holding down $mod and left mouse button. resize them with right mouse button + $mod.
+bindsym $mod+Shift+c reload # reload the sway configuration file
 
 # exit sway (logs you out of your Wayland session)
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'          
@@ -181,3 +181,15 @@ default_floating_border pixel 2
 # Window gaps
 gaps inner 10
 gaps outer 5
+
+# move windows to workspaces when they appear
+# use 'swaymsg -t get_tree' to find app_id and class values
+
+for_window [app_id="Alacritty"] move to workspace number 1
+for_window [class="jetbrains-rider"] move to workspace number 2
+for_window [app_id="firefox_firefox"] move to workspace number 3
+
+# autostart apps
+exec $term
+exec rider
+exec firefox
