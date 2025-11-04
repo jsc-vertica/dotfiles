@@ -21,9 +21,9 @@ output * {
 ### IDLE CONFIGURATION ###
 
 exec swayidle -w \
-timeout 600 'swaylock -f -s fill -i ~/Pictures/cheng-feng-qdlLUboRwxs-unsplash.jpg --font "JetBrains Mono" --font-size 14' \
+timeout 600 'swaylock -f' \
 timeout 900 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-before-sleep 'swaylock -f -s fill -i ~/Pictures/cheng-feng-qdlLUboRwxs-unsplash.jpg --font "JetBrains Mono" --font-size 14'
+before-sleep 'swaylock -f'
 
 ### INPUT CONFIGURATION ###
 # man 5 sway-input
@@ -38,7 +38,7 @@ input "type:keyboard" {
 bindsym $mod+Return exec $term # open terminal
 bindsym $mod+w kill # kill focused window
 bindsym $mod+space exec $menu # open application launcher
-bindsym $mod+l exec swaylock -f -s fill -i ~/Pictures/cheng-feng-qdlLUboRwxs-unsplash.jpg --font 'JetBrains Mono' --font-size 14 # lock the screen
+bindsym $mod+l exec swaylock -f # lock the screen
 floating_modifier $mod normal # drag windows by holding down $mod and left mouse button. resize them with right mouse button + $mod.
 bindsym $mod+Shift+c reload # reload the sway configuration file
 
