@@ -1,0 +1,233 @@
+* {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: rgba(30, 30, 46, 0.9);
+    border: 2px solid rgba(137, 180, 250, 0.3);
+    border-radius: 10px;
+    color: #cdd6f4;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/* Workspace styling for Sway */
+#workspaces {
+    background: rgba(49, 50, 68, 0.8);
+    border-radius: 8px;
+    padding: 0 5px;
+    margin: 3px;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    background-color: transparent;
+    color: #6c7086;
+    border: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    min-width: 25px;
+}
+
+#workspaces button:hover {
+    background: rgba(137, 180, 250, 0.2);
+    color: #89b4fa;
+}
+
+#workspaces button.focused {
+    background-color: #89b4fa;
+    color: #1e1e2e;
+    font-weight: bold;
+}
+
+#workspaces button.urgent {
+    background-color: #f38ba8;
+    color: #1e1e2e;
+    animation: blink 1s linear infinite alternate;
+}
+
+#workspaces button.visible {
+    background-color: rgba(137, 180, 250, 0.4);
+    color: #cdd6f4;
+}
+
+/* Sway mode indicator */
+#mode {
+    background: rgba(243, 139, 168, 0.8);
+    color: #1e1e2e;
+    border-radius: 8px;
+    padding: 2 15px;
+    margin: 3px;
+    font-weight: bold;
+}
+
+/* Window title */
+#window {
+    background: rgba(49, 50, 68, 0.8);
+    border-radius: 8px;
+    padding: 2 15px;
+    margin: 3px;
+    color: #cdd6f4;
+    font-weight: bold;
+}
+
+#window.empty {
+    background: transparent;
+}
+
+/* Clock */
+#clock {
+    background: linear-gradient(45deg, #89b4fa, #74c7ec);
+    color: #1e1e2e;
+    border-radius: 8px;
+    padding: 2 15px;
+    margin: 3px;
+    font-weight: bold;
+}
+
+/* System monitoring modules */
+#cpu, #memory, #disk, #temperature {
+    background: rgba(49, 50, 68, 0.8);
+    border-radius: 8px;
+    padding: 2 10px;
+    margin: 3px 2px;
+    color: #cdd6f4;
+}
+
+#cpu {
+    color: #a6e3a1;
+}
+
+#memory {
+    color: #f9e2af;
+}
+
+#disk {
+    color: #fab387;
+}
+
+#temperature {
+    color: #f38ba8;
+}
+
+/* State-based coloring */
+#cpu.warning, #memory.warning, #disk.warning {
+    background: rgba(249, 226, 175, 0.2);
+    color: #f9e2af;
+}
+
+#cpu.critical, #memory.critical, #disk.critical, #temperature.critical {
+    background: rgba(243, 139, 168, 0.2);
+    color: #f38ba8;
+    animation: blink 1s linear infinite alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: rgba(243, 139, 168, 0.5);
+    }
+}
+
+/* Network */
+#network {
+    background: rgba(49, 50, 68, 0.8);
+    border-radius: 8px;
+    padding: 2 10px;
+    margin: 3px 2px;
+    color: #74c7ec;
+}
+
+#network.disconnected {
+    color: #f38ba8;
+}
+
+/* Audio */
+#pulseaudio {
+    background: rgba(49, 50, 68, 0.8);
+    border-radius: 8px;
+    padding: 2 10px;
+    margin: 3px 2px;
+    color: #cba6f7;
+}
+
+#pulseaudio.muted {
+    color: #6c7086;
+}
+
+/* Battery */
+#battery {
+    background: rgba(49, 50, 68, 0.8);
+    border-radius: 8px;
+    padding: 2 10px;
+    margin: 3px 2px;
+    color: #a6e3a1;
+}
+
+#battery.charging, #battery.plugged {
+    color: #a6e3a1;
+}
+
+#battery.critical:not(.charging) {
+    background: rgba(243, 139, 168, 0.2);
+    color: #f38ba8;
+    animation: blink 1s linear infinite alternate;
+}
+
+#battery.warning:not(.charging) {
+    color: #f9e2af;
+}
+
+/* Custom modules */
+#custom-docker, #custom-git-status, #custom-sway-scratchpad {
+    background: rgba(49, 50, 68, 0.8);
+    border-radius: 8px;
+    padding: 2 10px;
+    margin: 3px 2px;
+}
+
+#custom-docker {
+    color: #74c7ec;
+}
+
+#custom-git-status {
+    color: #f9e2af;
+}
+
+#custom-sway-scratchpad {
+    color: #cba6f7;
+}
+
+/* System tray */
+#tray {
+    background: rgba(49, 50, 68, 0.8);
+    border-radius: 8px;
+    padding: 2 10px;
+    margin: 3px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #f38ba8;
+}
+
+/* Tooltips */
+tooltip {
+    background: rgba(30, 30, 46, 0.95);
+    border: 1px solid #89b4fa;
+    border-radius: 8px;
+    color: #cdd6f4;
+}
+
+tooltip label {
+    color: #cdd6f4;
+}

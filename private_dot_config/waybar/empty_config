@@ -1,0 +1,181 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 4,
+    "margin-top": 5,
+    "margin-left": 10,
+    "margin-right": 10,
+    
+    "modules-left": ["sway/workspaces", "sway/window"],
+    "modules-center": ["clock"],
+    "modules-right": [
+        "custom/docker",
+        "custom/git-status", 
+        "cpu",
+        "memory",
+        "disk",
+        "temperature",
+        "network",
+        "pulseaudio",
+        "battery",
+        "tray"
+    ],
+
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "10"
+        },
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": []
+        }
+    },
+
+    "sway/window": {
+        "format": "{}",
+        "max-length": 50,
+        "tooltip": false
+    },
+
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+
+    "clock": {
+        "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%H:%M  %d/%m/%Y}",
+        "format-alt": "{:%A, %B %d, %Y}"
+    },
+
+    "cpu": {
+        "format": "󰍛 {usage}%",
+        "tooltip": true,
+        "interval": 2,
+        "states": {
+            "warning": 70,
+            "critical": 90
+        }
+    },
+
+    "memory": {
+        "format": "m {used:0.1f}G",
+        "tooltip": true,
+        "tooltip-format": "Memory: {used:0.1f}G/{total:0.1f}G ({percentage}%)\nSwap: {swapUsed:0.1f}G/{swapTotal:0.1f}G",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        }
+    },
+
+    "disk": {
+        "interval": 30,
+        "format": "d {percentage_used}%",
+        "path": "/",
+        "tooltip": true,
+        "tooltip-format": "Used: {used} / {total} ({percentage_used}%)\nFree: {free}",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        }
+    },
+
+    "temperature": {
+        "thermal-zone": 2,
+        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        "format-critical": "{temperatureC}°C",
+        "format": "{temperatureC}°C",
+        "interval": 5
+    },
+
+    "network": {
+        "format-wifi": "wifi {essid}",
+        "format-ethernet": "eth {ipaddr}",
+        "tooltip-format": "tf {ifname}: {ipaddr}/{cidr}",
+        "format-linked": "fl {ifname} (No IP)",
+        "format-disconnected": "Disconnected",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "interval": 5
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "blue {volume}%",
+        "format-bluetooth-muted": "bluem",
+        "format-muted": "fm",
+        "format-source": "fs {volume}%",
+        "format-source-muted": "fsm",
+        "format-icons": {
+            "headphone": "hp",
+            "hands-free": "hf",
+            "headset": "hs",
+            "phone": "p",
+            "portable": "",
+            "car": "",
+            "default": ["d1", "d2", "d3"]
+        },
+        "on-click": "pavucontrol",
+        "scroll-step": 5
+    },
+
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "chr {capacity}%",
+        "format-plugged": "plg {capacity}%",
+        "format-alt": "{icon} {time}",
+        "format-icons": ["10", "20", "30", "40", "50", "60", "70", "80", "90", "100"]
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+
+    "custom/docker": {
+        "format": "dock {}",
+        "exec": "docker ps -q | wc -l 2>/dev/null || echo '0'",
+        "interval": 10,
+        "tooltip": true,
+        "tooltip-format": "Running containers: {}",
+        "on-click": "alacritty -e docker ps"
+    },
+
+    "custom/git-status": {
+        "format": "git {}",
+        "exec": "~/.config/waybar/scripts/git-status.sh",
+        "interval": 30,
+        "tooltip": true,
+        "on-click": "alacritty -e sh -c 'cd $(pwd) && git status; read'"
+    },
+
+    "custom/sway-scratchpad": {
+        "format": "sc {}",
+        "exec": "swaymsg -t get_tree | jq '.nodes[].nodes[] | select(.name==\"__i3_scratch\") | .focus' | jq '. | length'",
+        "interval": 3,
+        "tooltip": true,
+        "tooltip-format": "Scratchpad windows: {}",
+        "on-click": "swaymsg 'scratchpad show'"
+    }
+}
