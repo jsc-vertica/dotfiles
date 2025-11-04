@@ -123,9 +123,6 @@ fi
 # =============================================================================
 # Basic commands
 alias ls='lsd -lha --date "+%d-%m-%Y %H:%M:%S" --blocks date,size,name --group-dirs first'
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
@@ -141,8 +138,6 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-alias ~='cd ~'
-alias -- -='cd -'
 
 # Shortcuts
 alias h='history'
