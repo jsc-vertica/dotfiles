@@ -18,7 +18,7 @@ case $1 in
         notify-send "Screenshot" "Area copied to clipboard"
         ;;
     "area-edit")
-        grim -g "$(slurp)" - | swappy -f -
+        grim -g "$(slurp)" - | swappy -f - -o - | wl-copy
         ;;
     "full-edit")
         grim - | swappy -f -

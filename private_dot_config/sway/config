@@ -57,6 +57,18 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+# Screenshot keybindings using script
+bindsym $mod+s exec ~/.config/sway/scripts/screenshot.sh area-edit
+bindsym $mod+Shift+s exec ~/.config/sway/scripts/screenshot.sh area-edit
+
+#bindsym $mod+p exec ~/.config/sway/scripts/screenshot.sh full
+#bindsym $mod+Shift+p exec ~/.config/sway/scripts/screenshot.sh full-clipboard
+#bindsym $mod+o exec ~/.config/sway/scripts/screenshot.sh area
+#bindsym $mod+Shift+o exec ~/.config/sway/scripts/screenshot.sh area-clipboard
+#bindsym $mod+i exec ~/.config/sway/scripts/screenshot.sh area-edit
+#bindsym $mod+Shift+i exec ~/.config/sway/scripts/screenshot.sh full-edit
+#bindsym $mod+Alt+i exec ~/.config/sway/scripts/screenshot.sh window
+
 ### WORKSPACES ###
 
 # Switch to workspace
@@ -91,8 +103,8 @@ bindsym $mod+b splith
 bindsym $mod+v splitv
 
 # Switch the current container between different layout styles
-bindsym $mod+Shift+s layout stacking
-bindsym $mod+Shift+w layout tabbed
+#bindsym $mod+Shift+s layout stacking
+#bindsym $mod+Shift+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # Toggle the current focus between tiling and floating mode
