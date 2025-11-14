@@ -179,7 +179,7 @@ workspace 3
 exec firefox
 
 workspace 2
-exec sh -c 'if [ -f "$HOME/projects/EetWebshop/EET.sln" ]; then rider "$HOME/projects/EetWebshop/EET.sln"; else rider; fi'
+exec /opt/rider/bin/rider
 assign [class="jetbrains-rider"] 2
 
 workspace 1
