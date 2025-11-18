@@ -184,6 +184,3 @@ assign [class="jetbrains-rider"] 2
 
 workspace 1
 exec $term
-
-exec systemctl --user import-environment XDG_CURRENT_DESKTOP
-exec systemctl --user import-environment WAYLAND_DISPLAY
