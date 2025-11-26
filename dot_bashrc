@@ -61,16 +61,6 @@ export LESS_TERMCAP_ue=$'\e[0m'        # End underline
 export LESS_TERMCAP_us=$'\e[1;4;31m'   # Begin underline
 
 # =============================================================================
-# PATH CONFIGURATION
-# =============================================================================
-# Add common directories to PATH if they exist
-for dir in "$HOME/bin" "$HOME/.local/bin" "$HOME/.cargo/bin" "$HOME/go/bin"; do
-    if [[ -d "$dir" && ":$PATH:" != *":$dir:"* ]]; then
-        PATH="$dir:$PATH"
-    fi
-done
-
-# =============================================================================
 # PROMPT CONFIGURATION
 # =============================================================================
 # Color definitions
@@ -247,19 +237,16 @@ if [ -f ~/.bashrc.work ]; then
     . ~/.bashrc.work
 fi
 
-# Welcome message
-if [[ -t 1 ]]; then
-    echo -e "${ECHO_BLUE}Today is $(date '+%A, %B %d, %Y')${ECHO_RESET}"
-    
-    # Show system info (trim leading whitespace)
-    if command -v uptime &> /dev/null; then
-        echo -e "${ECHO_YELLOW}$(uptime | sed 's/^ *//')${ECHO_RESET}"
+# =============================================================================
+# PATH CONFIGURATION
+# =============================================================================
+# Add common directories to PATH if they exist
+for dir in "$HOME/bin" "$HOME/.local/bin" "$HOME/.cargo/bin" "$HOME/go/bin"; do
+    if [[ -d "$dir" && ":$PATH:" != *":$dir:"* ]]; then
+        PATH="$dir:$PATH"
     fi
-fi
+done
 
-# =============================================================================
-# PATH
-# =============================================================================
 export PATH="/home/jsc/.local/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 export DOTNET_ROOT=$HOME/.dotnet
@@ -276,3 +263,13 @@ export XDG_CURRENT_DESKTOP=sway
 export XDG_SESSION_DESKTOP=sway
 export DOTNET_ENVIRONMENT=Development
 export ASPNETCORE_ENVIRONMENT=Development
+
+# Welcome message
+if [[ -t 1 ]]; then
+    echo -e "${ECHO_BLUE}Today is $(date '+%A, %B %d, %Y')${ECHO_RESET}"
+    
+    # Show system info (trim leading whitespace)
+    if command -v uptime &> /dev/null; then
+        echo -e "${ECHO_YELLOW}$(uptime | sed 's/^ *//')${ECHO_RESET}"
+    fi
+fi
