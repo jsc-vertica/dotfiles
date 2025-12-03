@@ -173,16 +173,10 @@ exec waybar
 workspace 4
 exec slack
 exec gtk-launch outlook-web
-assign [app_id="chrome-outlook.office.com__-Default"] 4
 exec gtk-launch teams-web
-assign [app_id="chrome-teams.microsoft.com__-Default"] 4
 
 workspace 3
 exec firefox
 
-workspace 2
-exec /opt/rider/bin/rider
-assign [class="jetbrains-rider"] 2
-
 workspace 1
-exec $term
+exec /opt/rider/bin/rider
