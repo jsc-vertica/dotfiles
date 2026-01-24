@@ -197,15 +197,7 @@ This repository follows chezmoi's naming conventions:
 - `dot_*` → `.* ` (dotfiles in home directory)
 - `private_dot_config` → `~/.config/` (config directory)
 - `empty_*` → Template/example files (may need customization)
-- `executable_*` → Files that should have execute permissions
-
-## Screenshots
-
-### Terminal (Alacritty + Bash)
-The configuration provides a clean, informative prompt with git integration and vi mode editing.
-
-### Sway Desktop
-Minimal Wayland-based desktop environment with Waybar status bar and efficient keyboard-driven workflow.
+- `executable_*` → Files that should have execute permission.
 
 ## Contributing
 
