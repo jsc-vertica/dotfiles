@@ -207,20 +207,6 @@ The configuration provides a clean, informative prompt with git integration and 
 ### Sway Desktop
 Minimal Wayland-based desktop environment with Waybar status bar and efficient keyboard-driven workflow.
 
-## Troubleshooting
-
-### Fonts not displaying correctly
-Ensure you have Nerd Fonts installed for proper icon display in the terminal and status bar.
-
-### lsd command not found
-Install lsd or modify the `ls` alias in `.bashrc` to use standard `ls` with colors.
-
-### Sway won't start
-Verify that all Sway dependencies are installed and your system supports Wayland.
-
-### .NET or Node.js paths not working
-Make sure .NET SDK and NVM are properly installed in the expected locations (`$HOME/.dotnet`, `$HOME/.nvm`).
-
 ## Contributing
 
 Feel free to fork this repository and adapt it to your needs. If you find improvements that could benefit others, pull requests are welcome!
