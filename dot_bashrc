@@ -263,6 +263,8 @@ export XDG_CURRENT_DESKTOP=sway
 export XDG_SESSION_DESKTOP=sway
 export DOTNET_ENVIRONMENT=Development
 export ASPNETCORE_ENVIRONMENT=Development
+export AZCOPY_TENANT_ID=12d9a99b-fe12-4ebd-b30d-eb06782c3a5d
+export AZCOPY_AUTO_LOGIN_TYPE=AZCLI
 
 # Welcome message
 if [[ -t 1 ]]; then
