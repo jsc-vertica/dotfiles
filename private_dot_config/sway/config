@@ -170,12 +170,14 @@ gaps outer 5
 
 exec waybar
 
+workspace 5
+exec gtk-launch teams-web
+assign [app_id="chrome-teams.microsoft.com__-Default"] 5
+
 workspace 4
 exec slack
 exec gtk-launch outlook-web
 assign [app_id="chrome-outlook.office.com__-Default"] 4
-exec gtk-launch teams-web
-assign [app_id="chrome-teams.microsoft.com__-Default"] 4
 
 workspace 3
 exec firefox
